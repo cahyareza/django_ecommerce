@@ -22,7 +22,7 @@ def register_view(request):
             login(request, user)
             return redirect("/")
         else:
-            request.session['invalid_user'] = 1  # 1 == True
+            request.session['register_user'] = 1  # 1 == True
     return render(request, "form.html", {"form": form})
 
 

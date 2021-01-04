@@ -124,4 +124,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
+
+STATICFILES_DIRS = [
+    BASE_DIR/ "staticfiles"
+]
+
+STATIC_ROOT = BASE_DIR/"cdn_test"/"static"  # AWS SE + Cloudfront, Google cloud Storage, Django Storage
 STATIC_URL = '/static/'
+
+MEDIA_URL = "/media/"
+# any file field upload by default
+MEDIA_ROOT = BASE_DIR/"cdn_test"/"media"
+
+PROTECTED_MEDIA = BASE_DIR/"cdn_test"/"protected"
+
+if DEBUG:
+    STATIC_ROOT.mkdir(parents=True, exist_ok=True)
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+    PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)
+
+

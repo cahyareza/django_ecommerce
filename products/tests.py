@@ -20,6 +20,7 @@ class ProductTestCase(TestCase):
 
         user_a.save()
         user_a.set_password(user_a_pw)
+
         user_a.save()
         self.user_a = user_a
         user_b = User.objects.create_user('user_2', 'cfe3@invlalid.com', 'some_123_password')
